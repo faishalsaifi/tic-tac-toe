@@ -4,7 +4,7 @@ let resultPanel=document.getElementById('result-panel');
 let turn=document.getElementById("turn");
 let currentPlayer = "X";
 resultMain.style.opacity="0";
-turn.innerHTML=`<p>${currentPlayer} turn</p>
+turn.innerHTML=`<p>${currentPlayer} Turn</p>
 `
 let gameover = false;
 childs.forEach((child,index)=>{
@@ -34,7 +34,7 @@ function updateTurn(player){
     turn.style.opacity="0";
     setTimeout(()=>{
 
-        turn.innerHTML=`<p>${player} turn</p>`
+        turn.innerHTML=`<p>${player} Turn</p>`
      turn.style.opacity="1";
     },500);
 }
@@ -68,6 +68,8 @@ function result(){
                 <h1>Winner</h1>`;
             }
             gameover=true;
+            fire();
+            
     }
     })
 }
@@ -88,4 +90,12 @@ function reset(){
     gameover=false;
 })
 
+}
+function fire(){
+setTimeout(()=>{
+    confetti({
+        particleCount: 120,
+        spread: 120,
+        origin: { y: 0.6 }})
+      },1000);
 }
