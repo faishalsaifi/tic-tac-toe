@@ -29,6 +29,7 @@ childs.forEach((child,index)=>{
         console.log(arr);
         result();
     });
+    
 });
 function updateTurn(player){
     turn.style.opacity="0";
